@@ -1,0 +1,24 @@
+.footer-container {
+  border-top: 10px solid #2c7fbf;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 40px 0;
+}
+
+.list-unstyled {
+  margin-left: 0;
+}
+
+.list-unstyled li {
+  margin-top: 15px; 
+}
+
+.list-unstyled li a {
+  color: #161616;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.list-unstyled li a:hover {
+  color: #007bff;
+}

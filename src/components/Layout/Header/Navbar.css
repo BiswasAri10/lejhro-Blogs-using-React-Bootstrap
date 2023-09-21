@@ -1,0 +1,35 @@
+.header-container {
+  background-color: #d6932c;
+}
+
+.navbar {
+  padding: 10px 20px;
+}
+
+.navbar-brand {
+  padding: 20px;
+  margin-left: 50px;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 10px;
+}
+
+.nav-item {
+  margin-right: 30px;
+}
+
+
+.header-text {
+  color: white;
+  padding: 40px 40px;
+  font-size: 50px;
+  margin-left: 100px;
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-item-hide {
+    display: none; 
+  }
+}

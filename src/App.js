@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "./components/Layout/Header/Navbar";
+import Paragraph from "./components/Layout/Body/Paragraph";
+import Footer from "./components/Layout/Footer/Footer";
+import ScrollNavbar from "./components/Layout/Header/ScrollNavbar";
+import ScrollToTopButton from "./components/Layout/others/ScrollToTopButton";
 
 function App() {
+  const [showScrollNavbar, setShowScrollNavbar] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 15) {
+      setShowScrollNavbar(true);
+    } else {
+      setShowScrollNavbar(false);
+    }
+    
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+
+      {showScrollNavbar && <ScrollNavbar />}
+
+      <Paragraph />
+
+      <Footer />
+      <ScrollToTopButton />
+    </>
   );
 }
 
